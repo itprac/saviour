@@ -1,0 +1,40 @@
+import 'package:flutter/material.dart';<br>
+void main() {<br>
+  runApp(GestorDetectorApp());<br>
+}<br>
+class GestorDetectorApp extends StatefulWidget {<br>
+  const GestorDetectorApp({Key? key}): super(key: key);<br>
+  @override<br>
+ _GestorDetectorAppState createState() => _GestorDetectorAppState();<br>
+}<br>
+class _GestorDetectorAppState extends State {<br>
+   late Color? color = Colors.blue [900];<br>
+   @override<br>
+   Widget build(BuildContext context) {<br>
+    return MaterialApp(<br>
+      home: Scaffold(<br>
+        appBar: AppBar(<br>
+         title: Text("Gesture Detector App"),<br>
+      ), // AppBar<br>
+      body: Center(<br>
+       child: GestureDetector(<br>
+         onTap: () {<br>
+           print("Continer is clicked");<br>
+           setState(() {<br><br>
+             color = Colors.red[600];<br>
+           });<br>
+         },<br>
+         child: Container(<br>
+           height: 100,<br>
+           width: 100,<br>
+           color: color,<br>
+           alignment: Alignment.center,<br>
+           child: Text("Click Me!",<br>
+              style: TextStyle(color: Colors.white, fontSize: 20)),<br>
+           ),<br>
+         ),<br>
+       ),<br>
+     ),<br>
+   );<br>
+ }<br>
+}<br>

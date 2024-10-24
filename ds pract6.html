@@ -1,0 +1,15 @@
+reversing an array<br>
+=========================================================<br>
+print("reversing an array")<br>
+n=int(input("enter the number of elements:"))<br>
+A=[]<br>
+R_A=[]<br>
+print("enter the elements:")<br>
+for i in range(n):<br>
+    elt=int(input(""))<br>
+    A.append(elt)<br>
+    R_A.append(0)<br>
+print("array:",A)<br>
+for i in range(n):<br>
+    R_A[i]=A[n-(i+1)]<br>
+print("reversed array:",R_A)<br>

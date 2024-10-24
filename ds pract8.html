@@ -1,0 +1,15 @@
+tower of hanoi<br>
+======================================================<br>
+print("tower of hanoi")<br>
+def hanoi(n,src,dest,aux):<br>
+    if n==1:<br>
+        print("1","\t",src,"\t",dest)<br>
+    else:<br>
+    hanoi(n-1,src,aux,dest)<br>
+    print(n,"\t",src,"\t",dest)<br>
+    hanoi(n-1,aux,dest,src)<br>
+n=int(input("enter the number of disks:"))<br>
+moves=(2**n)-1<br>
+print("\ndisk\tfrom\tto")<br>
+answer=hanoi(n,'A','C','B')<br>
+print("no of moves=",moves)<br>

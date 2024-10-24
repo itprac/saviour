@@ -1,0 +1,59 @@
+Searching an element in the linked list<br>
+===============================================================<br>
+#include <stdio.h><br>
+#include <conio.h><br>
+#include <malloc.h><br>
+void main()<br>
+{<br>
+struct node{<br>
+int info;<br>
+struct node *next;<br>
+};<br>
+struct node *new_node,*ptr,*begin=NULL;<br>
+int item;<br>
+int option;<br>
+clrscr();<br>
+new_node=(struct node *)malloc(sizeof(struct node));<br>
+printf("\nEnter the element : ");<br>
+scanf("%d",&item);<br>
+new_node->info=item;<br>
+new_node->next=NULL;<br>
+begin=new_node;<br>
+ptr=begin;<br>
+printf("\nDo you want to enter other element 1. Yes 2. No : ");<br>
+scanf("%d",&option);<br>
+while(option!=2)<br>
+{<br>
+new_node=(struct node *)malloc(sizeof(struct node));<br>
+printf("\nEnter the element : ");<br>
+scanf("%d",&item);<br>
+new_node->info=item;<br>
+new_node->next=NULL;<br>
+ptr->next=new_node;<br>
+ptr=new_node;<br>
+printf("\nDo you want to enter other element 1. Yes 2. No : ");<br>
+scanf("%d",&option);<br>
+}<br>
+printf("\nThe Linked List : \n");<br>
+ptr=begin;<br>
+while(ptr!=NULL)<br>
+{<br>
+printf("\t%d",ptr->info);<br>
+ptr=ptr->next;<br>
+}<br>
+printf("\nEnter the element to be searched : ");<br>
+scanf("%d",&item);<br>
+ptr=begin;<br>
+while(ptr!=NULL)<br>
+{<br>
+if(ptr->info==item)<br>
+{<br>
+printf("\nThe element is present in the list.");<br>
+getch();<br>
+exit(0);<br>
+}<br>
+ptr=ptr->next;<br>
+}<br>
+printf("\nThe element is not present in the list.");<br>
+getch();<br>
+}<br><br>

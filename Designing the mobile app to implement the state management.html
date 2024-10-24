@@ -1,0 +1,60 @@
+import 'package:flutter/material.dart';<br>
+<br>
+void main() => runApp(MyApp());<br>
+<br>
+class MyApp extends StatelessWidget {<br>
+  const MyApp({Key? key}) : super(key: key);<br>
+  <br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return MaterialApp(<br>
+      title: 'Stateful Widget',<br>
+      theme: ThemeData(<br>
+        primarySwatch: Colors.blue,<br>
+      ),<br>
+      home: CounterWidget(),<br>
+    );<br>
+  }<br>
+}<br>
+class CounterWidget extends StatefulWidget {<br>
+  @override<br>
+  _CounterWidgetState createState() => _CounterWidgetState();<br>
+}<br>
+<br>
+class _CounterWidgetState extends State<CounterWidget> {<br>
+  int _counter = 0;<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return Scaffold(<br>
+      appBar: AppBar(<br>
+        title: const Text('Stateful Widget'),<br>
+      ),<br>
+      body: Column(<br>
+        mainAxisAlignment: MainAxisAlignment.center,<br>
+        children: [<br>
+          Center(<br>
+            child: Container(<br>
+              color: Colors.blue,<br>
+              child: Text(<br>
+                '$_counter',<br>
+                style: TextStyle(fontSize: 50.0),<br>
+              ),<br>
+            ),<br>
+          ),<br>
+          Slider(<br>
+            min: 0,<br>
+            max: 100,<br>
+            value: _counter.toDouble(),<br>
+            onChanged: (double value) {<br>
+              setState(() {<br>
+                _counter = value.toInt();<br>
+              });<br>
+            },<br>
+            activeColor: Colors.blue,<br>
+            inactiveColor: Colors.red,<br>
+          ),<br>
+        ],<br>
+      ),<br>
+    );<br>
+  }<br><br>
+}<br>

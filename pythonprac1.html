@@ -1,0 +1,64 @@
+1A  Create a program that asks the user to enter their name and their age. Print out a message addressed to them that tells them the year that they will turn 100 years old.<br>
+============================================================================================================================<br>
+import datetime<br>
+name = input ("Hello! Please enter your name: ")<br>
+print ("Hello"   + name)<br>
+age = int(input ("Enter your age: "))<br>
+year_now = datetime.datetime.now()<br>
+print (year_now. year)<br>
+print ("You will turn 100 in " + str(int (100-age) + int (year_now. year)))<br>
+========================================================================================================================<br>
+1 B Enter the number from the user and depending on whether the number is even or odd, print out an appropriate message to the user.<br>
+<br>
+num = int (input ("enter a number : " ))<br>
+if (num %2) == 0:<br>
+    print(num,"is even number ")<br>
+else:<br>
+    print(num," is odd number ")<br>
+=============================================================================================================================<br>
+    1 C Write a program to generate the Fibonacci series.<br>
+    <br>
+    a=0 <br>
+b=1<br>
+n=int (input("Enter a number :  "))<br>
+for i in range (1,n):<br>
+  c=a+b<br>
+  a=b<br>
+  b=c<br>
+  print (c)<br>
+================================================================================================================================<br>
+  1 D Write a function that reverses the user defined value.<br>
+  <br>
+  number=int(input("Enter a number : "))<br>
+reverse=0<br>
+while number > 0:<br>
+  remainder = number %10<br>
+  reverse = (reverse *10) + remainder<br>
+  number = number // 10<br>
+print("Reverse number is ",reverse)<br>
+<======================================================================================================================<br>
+1 E Write a function to check the input value is Armstrong <br>
+<br>
+num= int(input ("Enter a number : "))<br>
+sum = 0<br>
+temp = num<br>
+while temp > 0:<br>
+  digit = temp % 10 <br>
+  sum += digit ** 3 <br>
+  temp //= 10<br>
+if num== sum:<br>
+  print (num, "is an Armstrong number") <br>
+else:<br>
+  print (num, "is not an Armstrong number")<br>
+============================================================================================================================<br>
+  1 F Write a recursive function to print the factorial for a   given number.<br>
+  <br>
+  def factorial (n):<br><br>
+ if n==0 or n==1:<br>
+     return 1<br>
+ else:<br>
+    return n*factorial (n-1)<br>
+n = int (input ("enter a no : "))<br>
+res = factorial (n)<br>
+print ("Factorial of", n, "is", res)<br>
+<br>

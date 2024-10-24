@@ -1,0 +1,94 @@
+Reversing one-way linked list<br>
+================================================================<br>
+   #include <stdio.h><br>
+    #include <malloc.h><br>
+    #include <stdlib.h><br>
+    void main()<br>
+    {<br>
+    struct node{<br>
+    int info;<br>
+    struct node *next;<br>
+    };<br>
+    struct node *new_node,*ptr,*ptr1,*ptr2,*ptr3,*begin=NULL;<br>
+    int item;<br>
+    int option;<br>
+    clrscr();<br>
+    new_node=(struct node *)malloc(sizeof(struct node));<br>
+    printf("\nEnter the element : ");<br>
+    scanf("%d",&item);<br>
+    new_node->info=item;<br>
+    new_node->next=NULL;<br>
+    begin=new_node;<br>
+    ptr=begin;<br>
+    printf("\nDo you want to enter other element 1. Yes 2. No : ");<br>
+    scanf("%d",&option);<br>
+    while(option!=2)<br>
+    {<br>
+    new_node=(struct node *)malloc(sizeof(struct node));<br>
+    printf("\nEnter the element : ");<br>
+    scanf("%d",&item);<br>
+    new_node->info=item;<br>
+    new_node->next=NULL;<br>
+    ptr->next=new_node;<br>
+    ptr=new_node;<br>
+    printf("\nDo you want to enter other element 1. Yes 2. No : ");<br>
+    scanf("%d",&option);<br>
+    }<br>
+    printf("\nThe Linked List : ");<br>
+    ptr=begin;<br>
+    while(ptr!=NULL)<br>
+    {<br>
+    printf("\t%d",ptr->info);<br>
+    ptr=ptr->next;<br>
+    }<br>
+    //if the list has only one element<br>
+    if(begin->next==NULL)<br>
+    {<br>
+    printf("\nThe list has only one element.");<br>
+    getch();<br>
+    exit(0);<br>
+    }<br>
+    //define *ptr1,*ptr2,*ptr3<br>
+    if(begin->next!=NULL)<br>
+    {<br>
+    ptr1=begin;<br>
+    ptr2=ptr1->next;<br>
+    ptr3=ptr2->next;<br>
+    }<br>
+    //if the list has only two nodes<br>
+    if(ptr3==NULL)<br>
+    {<br>
+    ptr2->next=ptr1;<br>
+    ptr1->next=NULL;<br>
+    begin=ptr2;<br>
+    printf("\n\nThe Reversed Linked List : ");<br>
+    ptr=begin;<br>
+    while(ptr!=NULL)<br>
+    {<br>
+    printf("\t%d",ptr->info);<br>
+    ptr=ptr->next;<br>
+    }<br>
+    getch();<br>
+    exit(0);<br>
+    }<br>
+    //if the list has more than two nodes<br>
+    ptr1->next=NULL;<br>
+    while(ptr3->next!=NULL)<br>
+    {<br>
+    ptr2->next=ptr1;<br>
+    ptr1=ptr2;<br>
+    ptr2=ptr3;<br>
+    ptr3=ptr3->next;<br>
+    }<br>
+    ptr2->next=ptr1;<br>
+    ptr3->next=ptr2;<br>
+    begin=ptr3;<br>
+    printf("\n\nThe Reversed Linked List : ");<br>
+    ptr=begin;<br>
+    while(ptr!=NULL)<br>
+    {<br>
+    printf("\t%d",ptr->info);<br>
+    ptr=ptr->next;<br>
+    }<br>
+    getch();<br>
+    }<br>

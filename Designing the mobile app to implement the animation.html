@@ -1,0 +1,72 @@
+import 'package:flutter/animation.dart';<br>
+import 'package:flutter/material.dart';<br>
+void main() => runApp(MyApp());<br>
+class MyApp extends StatelessWidget {<br>
+// This widget is the root of your application.<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return MaterialApp(<br>
+      title: 'Flutter Animation',<br>
+      theme: ThemeData(<br>
+// This is the theme of your application.<br>
+        primarySwatch: Colors.blue,<br>
+      ),<br>
+      home: MyHomePage(),<br>
+    );<br>
+  }<br><br>
+}<br>
+class MyHomePage extends StatefulWidget {<br><br>
+  _HomePageState createState() => _HomePageState();<br><br>
+}<br>
+class _HomePageState extends State<MyHomePage> with<br>
+    SingleTickerProviderStateMixin {<br>
+  late Animation<double> animation;<br>
+  late AnimationController animationController;<br><br>
+  @override<br>
+  void initState() {<br>
+    super.initState();<br>
+    animationController = AnimationController(vsync: this, duration:<br>
+    Duration(milliseconds: 2500));<br>
+    animation = Tween<double>(begin: 0.0, end:<br><br>
+    1.0).animate(animationController);<br>
+    animation.addListener((){<br>
+      setState((){<br>
+        print (animation.value.toString());<br>
+      });<br>
+    });<br><br>
+    animation.addStatusListener((status){<br>
+      if(status == AnimationStatus.completed){<br>
+        animationController.reverse();<br><br>
+      } else if(status == AnimationStatus.dismissed) {<br>
+        animationController.forward();<br>
+      }<br>
+    });<br>
+    animationController.forward();<br>
+  }<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return Center(<br>
+        child: AnimatedLogo(<br>
+          animation: animation,<br>
+        )<br>
+    );<br>
+  }<br>
+}<br>
+class AnimatedLogo extends AnimatedWidget {<br>
+  final Tween<double> _sizeAnimation = Tween<double> (begin: 0.0,<br>
+      end:<br>
+      500.0);<br>
+  AnimatedLogo({Key ? key, required Animation animation}):super(key:<br>
+  key,<br>
+      listenable : animation);<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    final Animation<double> animation = listenable as<br>
+    Animation<double>;<br>
+    return Transform.scale(<br>
+      scale: _sizeAnimation.evaluate(animation),<br>
+      child: FlutterLogo(),<br>
+    );<br>
+  }<br>
+}<br>
+<br>

@@ -1,0 +1,59 @@
+<p>
+    <hr width="100%;" color="blue" size="1">
+		1.Bubble sort<br>
+<br>
+print("Bubble Sort")<br>
+A = [7, 6, 4, 3, 0]<br>
+n=len (A)<br>
+print("A=",A)<br>
+<br>
+for p in range(n-1):<br>
+print("Pass-",p+1)<br>
+for i in range (n-p-1):<br>
+if A[i] > A[i + 1]:<br>
+temp=A[i]<br>
+A[i]=A[i+1]<br>
+A[i+1]=temp<br>
+print("\tA=",A)<br>
+<br>
+<hr width="100%;" color="blue" size="1">
+		2. selection sort<br>
+<br>
+print("\nSelection Sort")<br>
+A=[50,75,65,45,35]<br>
+n=len (A)<br>
+print("A=",A)<br>
+for i in range(n-1):<br>
+min_elt=A[i]<br>
+flag=0<br>
+for j in range(i+1,n):<br>
+if A[j]<min_elt:<br>
+min_elt=A[j]<br>
+pos=j<br>
+flag=1<br>
+if flag==1:<br>
+temp=A[i]<br>
+A[i]=A[pos]<br>
+[pos]=temp<br>
+print("Pass-",i+1)<br>
+print("\tA=",A)<br>
+<br>
+<hr width="100%;" color="blue" size="1">
+		3.insertion sort
+<br>
+print("\nInsertion Sort")<br>
+A=[5,-1,2,7,3]<br>
+n=len(A)<br>
+print("A=",A)<br>
+for i in range(1,n):<br>
+temp=A[i]<br>
+k=i-1<br>
+while temp<A[k] and k>-1:<br>
+A[k+1]=A[k]<br>
+k=k-1<br>
+A[k+1]=temp<br>
+print("Pass-",i)<br>
+print("\tA=",A)<br>
+<br>
+<hr width="100%;" color="blue" size="1">
+<p>

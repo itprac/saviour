@@ -1,0 +1,34 @@
+1 max heap<br>
+========================================================<br>
+print("max heap")<br>
+a=[]<br>
+n=int(input("enter the number of elements:"))<br>
+for i in range(n):<br>
+a.append(0)<br>
+for j in range(n):<br>
+new_elt=int(input("\nEnter the element:"))<br>
+pos=j<br>
+while a[(pos-1)//2]<=new_elt and (pos-1)//2>-1:<br>
+a[pos]=a[(pos-1)//2]<br>
+pos=(pos-1)//2<br>
+a[pos]=new_elt<br>
+for i in range(j+1):<br>
+print(a[i],end="")<br>
+<br>
+=====================================================<br>
+min heap<br>
+====================================================<br>
+print("max heap")<br>
+a=[]<br>
+n=int(input("enter the number of elements:"))<br>
+for i in range(n):<br>
+a.append(0)<br>
+for j in range(n):<br>
+new_elt=int(input("\nEnter the element:"))<br>
+pos=j<br>
+while a[(pos-1)//2]>=new_elt and (pos-1)//2>-1:<br>
+a[pos]=a[(pos-1)//2]<br>
+pos=(pos-1)//2<br>
+a[pos]=new_elt<br>
+for i in range(j+1):<br>
+print(a[i],end="")<br>

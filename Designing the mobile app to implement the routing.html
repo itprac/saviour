@@ -1,0 +1,53 @@
+import 'package:flutter/material.dart';<br>
+void main() {<br>
+  runApp(MaterialApp(<br>
+    title: '4278',<br>
+    theme: ThemeData(<br>
+      primarySwatch: Colors.green,<br>
+    ),<br>
+    home: FirstRoute(),<br>
+  ));<br><br>
+}<br>
+class FirstRoute extends StatelessWidget {<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+  return Scaffold(<br>
+  appBar: AppBar(<br>
+  title: Text('First Screen'),<br>
+  ), // AppBar<br>
+  body: Center(<br>
+  child: ElevatedButton(<br>
+  child: Text('Click Here'),<br>
+//color: Colors.orangeAccent,<br>
+  onPressed: () {<br>
+  Navigator.push(<br>
+  context,<br>
+  MaterialPageRoute (builder: (context) => SecondRoute()),<br>
+  );<br>
+  },<br>
+  ),<br><br>
+  ),<br>
+  );<br>
+  }<br>
+  }<br>
+class SecondRoute extends StatelessWidget {<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+  return Scaffold(<br>
+  appBar: AppBar(<br>
+  title: Text("Second Screen"),<br>
+  ),<br>
+  body: Center(<br>
+  child: ElevatedButton(<br>
+  <br>
+  onPressed: () {<br>
+  Navigator.pop(context);<br>
+  },<br>
+  child: Text('Go back'),<br>
+  ), // ElevatedButton<br>
+  ), // Center<br>
+  ); // Scaffold<br>
+  }<br>
+  }<br>
+  <br>
+=========================================================================

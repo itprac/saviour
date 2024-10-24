@@ -1,0 +1,52 @@
+adjacency matrix<br>
+============================================================================<br>
+print("graphs:adjacency matrix")<br>
+n=int(input("enter number of vertices:"))<br>
+V=[]<br>
+for i in range(n):<br>
+x=input("enter the names of vertices:")<br>
+V.append(x)<br>
+A=[]<br>
+for i in range(n):<br>
+r=[]<br>
+for i in range(n):<br>
+r.append(0)<br>
+A.append(r)<br>
+for i in range(n):<br>
+for j in range(n):<br>
+print("Is",V[i],"is adjacent to",V[j],"?1.yes 2.no.")<br>
+ans=int(input())<br>
+if ans==1:<br>
+A[i][j]=1<br>
+print("adjacency matrix:")<br>
+for i in range(n):<br>
+for j in range(n):<br>
+print(A[i][j],end-" ")<br>
+print()<br>
+=======================================================================<br>
+shortest path matrix<br>
+=====================================================================<br>
+print("Warshall's Shortest Path Algorithm")<br>
+n=5<br>
+W=[[0,7,12,9,0], [5,0,0,11,0], [0,9,0,0,7], [0,0,5,0,0], [0,8,8,0,0]]<br>
+S=[[0,7,12,9,1000], [5,0,1000,11,1000], [1000,9,0,1000,7], [1000,1000,5,0,1000], [1000,8,8,1000,0]]<br>
+print ("Weight Matrix :")<br>
+for i in range(n):<br>
+for j in range(n):<br>
+print("\t", W[i][j],end=" ")<br>
+print()<br>
+print("S0")<br>
+for i in range(n):<br>
+for j in range(n):<br>
+print("\t",S[i][j],end="")<br>
+print()<br>
+for k in range(n):<br>
+for i in range(n):<br>
+for j in range (n):<br>
+if S[i][j]>S[i] [k]+S[k] [j]:<br>
+S[i][j]=S[i] [k]+S[k] [j]<br>
+print("S",k)<br>
+for i in range(n):<br>
+for j in range(n):<br>
+print("\t",S[i][j],end="")<br>
+print()<br>

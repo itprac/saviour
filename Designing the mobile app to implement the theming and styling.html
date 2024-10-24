@@ -1,0 +1,49 @@
+import 'package:flutter/foundation.dart';<br>
+import 'package:flutter/material.dart';<br>
+void main() {<br>
+  runApp(MyApp());<br>
+}<br>
+class MyApp extends StatelessWidget {<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    final appName = 'Theame And Styling';<br>
+    return MaterialApp(<br>
+    title: appName,<br><br>
+    theme: ThemeData(<br>
+    brightness: Brightness.light,<br>
+    primaryColor: Colors.blue,<br>
+    hintColor: Colors.deepOrangeAccent,<br>
+    fontFamily: 'Georgia',<br>
+        textTheme: TextTheme(<br>
+        headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),<br>
+        headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),<br>
+         bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind&'),<br>
+    ),<br>
+),<br>
+    home: MyHomePage(<br>
+    title: appName,<br>
+    ),<br>
+    );<br>
+}<br>
+}<br>
+class MyHomePage extends StatelessWidget {<br>
+  final String title;<br>
+  const MyHomePage({Key? key, required this.title}): super(key: key);<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return Scaffold(<br>
+        appBar: AppBar(<br>
+          title: Text(title),<br>
+        ), // AppBar<br>
+        body: Center(<br>
+         child: Container(<br>
+          color: Theme.of(context).hintColor,<br>
+          child: Text(<br>
+          'Hello Class',<br>
+           style: Theme.of(context).textTheme.headline6,<br>
+          ), <br>
+        ), <br>
+    ),<br>
+    );<br>
+  }<br>
+}<br>

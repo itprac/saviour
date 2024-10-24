@@ -1,0 +1,21 @@
+hashinng technique<br>
+==========================================================<br>
+print("hashing technique")<br>
+m=int(input("size of the hash table:"))<br>
+n=int(input("number of keys:"))<br>
+h=[]<br>
+for i in range(m):<br>
+    h.append(0)<br>
+print("enter elements:)<br>
+for i in range(n):<br>
+    key=int(input())<br>
+    rel_add=key%m<br>
+    if h[rel_add]==0:<br>
+        h[rel_add]=key<br>
+        print("relative address=",rel_add)<br>
+    else:<br>
+        print("Relative address=",rel_add,"(collision case)")<br>
+print("\nhash table")<br>
+print("index\tKey")<br>
+for i in range(m):<br>
+    print(i,"\t",h[i])<br>

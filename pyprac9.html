@@ -1,0 +1,47 @@
+from tkinter import *<br>
+root = Tk() <br>
+Label1 = Label(root, text="Hello World", bg="red", width=500,height=500)<br>
+Label1.pack() <br>
+root.mainloop()<br>
+<br>
+=========================================================================<br>
+<br>
+root = Tk ()<br>
+labelfont = ('times', 20, 'bold')<br>
+widget = Label (root, text='Hello config world') <br>
+widget.config (bg='black', fg='yellow')<br>
+widget.config (font=labelfont) <br>
+widget.config (height=3, width=20)<br>
+widget.pack (expand=YES, fill=BOTH)<br>
+root.mainloop()<br>
+<br>
+<br>
+====================================================<br>
+<br>
+import tkinter as tk <br>
+root = tk.Tk()<br>
+root.title("Tkinter World")<br>
+label = tk.Label (root, text="Hello, Studytonight!") <br>
+label.pack()<br>
+entry = tk.Entry(root)<br>
+entry.pack()<br>
+button = tk. Button (root, text="Click Me!")<br>
+button.pack ()<br>
+root.mainloop ()<br>
+<br>
+=========================================================<br>
+<br>
+from tkinter import * <br>
+root=Tk ()<br>
+root.title ("Button") <br>
+app=Frame (root)<br>
+app.grid()<br>
+button1=Button (app, text="This is a button")<br>
+button1.grid()<br>
+button2=Button (app)<br>
+button2.grid()<br>
+button2.configure (text="This will show text")<br>
+button3=Button (app)<br>
+button3.grid()<br>
+button3.configure (text="This will show up as well", bg='red', fg='Yellow')<br>
+root.mainloop()<br>

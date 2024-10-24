@@ -1,0 +1,241 @@
+import 'package:flutter/material.dart';<br>
+void main() => runApp(MyApp());<br>
+<br>
+class MyApp extends StatelessWidget {<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return MaterialApp(<br>
+      home: Scaffold(<br>
+        appBar: AppBar(<br>
+          title: Text("4278"),<br>
+        ),<br>
+        body: Container(<br>
+            padding: EdgeInsets.all(35),<br>
+            margin: EdgeInsets.all(20),<br>
+            decoration: BoxDecoration(<br>
+              border: Border.all(color: Colors.black, width: 4),<br>
+              borderRadius: BorderRadius.circular(8),<br>
+              boxShadow: [<br>
+                new BoxShadow(color: Colors.green, offset: new Offset(6.0,<br>
+                    6.0),),<br>
+              ],<br>
+            ),<br>
+            child: Text("Hello! I am in the container widget decoration box!!",<br>
+                style: TextStyle(fontSize: 30)),<br>
+      ),<br>
+    ),<br>
+    );<br>
+  }<br>
+}<br>
+<br>
+=========================================================================<br>
+<br>
+import 'package:flutter/material.dart';<br>
+void main() { runApp(MyApp()); }<br>
+class MyApp extends StatelessWidget {<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return MaterialApp(<br>
+        home: MyHomePage()<br>
+    );<br>
+  }<br>
+}<br>
+class MyHomePage extends StatefulWidget {<br>
+  @override<br>
+  _MyHomePageState createState() => _MyHomePageState();<br>
+}<br>
+class _MyHomePageState extends State<MyHomePage> {<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return Scaffold(<br>
+      appBar: AppBar(<br>
+        title: Text("4278"),<br>
+      ),<br>
+      body: Row(<br>
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,<br>
+          children: <Widget>[<br>
+            Container(<br>
+              margin: EdgeInsets.all(12.0),<br>
+              padding: EdgeInsets.all(8.0),<br>
+              decoration: BoxDecoration(<br>
+                  borderRadius: BorderRadius.circular(8),<br>
+                  color: Colors.green<br>
+              ),<br>
+              child: Text("React.js", style:<br>
+              TextStyle(color: Colors.yellowAccent, fontSize: 25),),<br>
+            ),<br>
+            Container(<br>
+              margin: EdgeInsets.all(15.0),<br>
+              padding: EdgeInsets.all(8.0),<br>
+              decoration: BoxDecoration(<br>
+                  borderRadius: BorderRadius.circular(8),<br>
+                  color: Colors.green<br>
+              ),<br>
+              child: Text("Flutter", style:<br>
+              TextStyle(color: Colors.yellowAccent, fontSize: 25),),<br>
+            ),<br>
+            Container(<br>
+              margin: EdgeInsets.all(12.0),<br>
+              padding: EdgeInsets.all(8.0),<br>
+              decoration: BoxDecoration(<br>
+                  borderRadius: BorderRadius.circular(8),<br>
+                  color: Colors.green<br>
+              ),<br>
+              child: Text("MySQL", style:<br>
+              TextStyle(color: Colors.yellowAccent, fontSize: 25),),<br>
+            )<br>
+          ]<br>
+      ),<br>
+    );<br>
+  }<br>
+}<br>
+<br>
+=======================================================================<br>
+<br>
+import 'package:flutter/material.dart';<br>
+void main() { runApp(MyApp()); }<br>
+class MyApp extends StatelessWidget {<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return MaterialApp(<br>
+        home: MyHomePage()<br>
+    );<br>
+  }<br>
+}<br>
+class MyHomePage extends StatefulWidget {<br>
+  @override<br>
+  _MyHomePageState createState() => _MyHomePageState();<br>
+}<br>
+class _MyHomePageState extends State<MyHomePage> {<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return Scaffold(<br>
+      appBar: AppBar(<br>
+        title: Text("4278"),<br>
+      ),<br>
+      body: Column(<br>
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,<br>
+          children:<Widget>[<br>
+            Container(<br>
+              margin: EdgeInsets.all(20.0),<br>
+              padding: EdgeInsets.all(12.0),<br>
+              decoration:BoxDecoration(<br>
+                  borderRadius:BorderRadius.circular(8),<br>
+                  color:Colors.red<br>
+              ),<br>
+              child: Text("React.js",style:<br>
+              TextStyle(color:Colors.yellowAccent,fontSize:20),),<br>
+            ),<br>
+            Container(<br>
+              margin: EdgeInsets.all(20.0),<br>
+              padding: EdgeInsets.all(12.0),<br>
+              decoration:BoxDecoration(<br>
+                  borderRadius:BorderRadius.circular(8),<br>
+                  color:Colors.red<br>
+              ),<br>
+              child: Text("Flutter",style:<br>
+              TextStyle(color:Colors.yellowAccent,fontSize:20),),<br>
+            ),<br>
+            Container(<br>
+              margin: EdgeInsets.all(20.0),<br>
+              padding: EdgeInsets.all(12.0),<br>
+              decoration:BoxDecoration(<br>
+                  borderRadius:BorderRadius.circular(8),<br>
+                  color:Colors.red<br>
+              ),<br>
+              child: Text("MySQL",style:<br>
+              TextStyle(color:Colors.yellowAccent,fontSize:20),),<br>
+            )<br>
+          ]<br>
+      ),<br>
+    );<br>
+  }<br>
+}<br>
+<br>
+==============================================================================<br>
+<br>
+import 'package:flutter/material.dart';<br>
+void main() => runApp(MyApp());<br>
+class MyApp extends StatelessWidget {<br>
+// This widget is the root of your application.<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return MaterialApp(<br>
+      theme: ThemeData(<br>
+        primarySwatch: Colors.blue,<br>
+      ),<br>
+      home: MyIconPage(),<br>
+    );<br>
+  }<br>
+}<br>
+class MyIconPage extends StatefulWidget {<br>
+  @override<br>
+  _MyIconPageState createState() => _MyIconPageState();<br>
+}<br>
+class _MyIconPageState extends State<MyIconPage> {<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return Scaffold(<br>
+      appBar: AppBar(<br>
+        title: Text('4278'),<br>
+      ),<br>
+      body: Row(<br>
+          mainAxisAlignment: MainAxisAlignment.spaceAround,<br>
+          children: <Widget>[<br>
+            Icon(<br>
+                Icons.camera_enhance,<br>
+                size: 70,<br>
+                color:Colors.green<br>
+            ),<br>
+            Icon(<br>
+                Icons.camera_front,<br>
+                size: 70,<br>
+                color:Colors.orange<br>
+            ),<br>
+            Icon(<br>
+                Icons.camera_rear,<br>
+                size: 70,<br>
+                color:Colors.black<br>
+            ),<br>
+          ]),<br>
+    );<br>
+  }<br>
+}<br>
+<br>
+==========================================================================<br>
+<br>
+import 'package:flutter/material.dart';<br>
+void main() => runApp(MyApp());<br>
+class MyApp extends StatelessWidget {<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return MaterialApp(<br>
+      home: Scaffold(<br>
+        appBar: AppBar(<br>
+          title: Text('Flutter Image Demo'),<br>
+        ),<br>
+        body: Center(<br>
+          child: Column(<br>
+            children: <Widget>[<br>
+          Image.asset('assets/image/tablet.jpg',width:400,height:500,fit:<br>
+          BoxFit.fitWidth,),<br>
+          Text(<br>
+              'A tablet is a wireless touch screen computer that is smaller than anotebook but larger than a smartphone.',<br>
+          style: TextStyle(fontSize: 20.0),<br>
+        )<br>
+        ],<br>
+      ),<br>
+    ),<br>
+    ),<br>
+    );<br>
+  }<br>
+}<br>
+<br>
+
+
+
+########################################################      DISCLAMER    #########################################################
+
+#####( "you have to do it this by yourself only.... with the help this code you only able to display the text not the image")#####
+
+=====================================================================================================================================

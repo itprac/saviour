@@ -1,0 +1,80 @@
+Sorting a doubly linked list<br>
+=============================================================<br>
+#include <stdio.h><br>
+    #include <malloc.h><br>
+    #include <stdlib.h><br>
+    void main()<br>
+    {<br>
+    struct node{<br>
+    int info;<br>
+    struct node *pre;<br>
+    struct node *next;<br>
+    };<br>
+    struct node *new_node,*ptr,*ptr1,*ptr2,*begin=NULL;<br>
+    int item, n, option, temp, p, i;<br>
+    clrscr();<br>
+    new_node=(struct node *)malloc(sizeof(struct node));<br>
+    printf("\nEnter the element : ");<br>
+    scanf("%d",&item);<br>
+    n=1;<br>
+    new_node->info=item;<br>
+    new_node->pre=NULL;<br>
+    new_node->next=NULL;<br>
+    begin=new_node;<br>
+    ptr=begin;<br>
+    printf("\nDo you want to enter other element 1. Yes 2. No : ");<br>
+    scanf("%d",&option);<br>
+    while(option!=2)<br>
+    {<br>
+    new_node=(struct node *)malloc(sizeof(struct node));<br>
+    printf("\nEnter the element : ");<br>
+    scanf("%d",&item);<br>
+    n=n+1; //counter for number of elements.<br>
+    new_node->info=item;<br>
+    new_node->pre=ptr;<br>
+    new_node->next=NULL;<br>
+    ptr->next=new_node;<br>
+    ptr=new_node;<br>
+    printf("\nDo you want to enter other element 1. Yes 2. No : ");<br>
+    scanf("%d",&option);<br>
+    }<br>
+    printf("\nThe Linked List : ");<br>
+    <br>
+    ptr=begin;<br>
+    while(ptr!=NULL)<br>
+    {<br>
+    printf("\t%d",ptr->info);<br>
+    ptr=ptr->next;<br>
+    }<br>
+    printf("\nTotal No. of Passes = %d ",n-1);<br>
+    if(n==1) // List has only one element<br>
+    {<br>
+    printf("\nThere is only one element in the list.");<br>
+    getch();<br>
+    exit(0);<br>
+    }<br>
+    for(p=0;p<n-1;p++)<br>
+    {<br>
+    ptr1=begin; <br>
+    ptr2=begin->next;<br>
+    for(i=0;i<n-p-1;i++)<br>
+    {<br>
+    if(ptr1->info>ptr2->info)<br>
+    {<br>
+    temp=ptr1->info;<br>
+    ptr1->info=ptr2->info;<br>
+    ptr2->info=temp;<br>
+    }<br>
+    ptr1=ptr2;<br>
+    ptr2=ptr2->next;<br>
+    }<br>
+    }<br>
+    printf("\nThe Sorted Linked List : ");<br>
+    ptr=begin;<br>
+    while(ptr!=NULL)<br>
+    {<br>
+    printf("\t%d",ptr->info);<br>
+    ptr=ptr->next;<br>
+    }<br>
+    getch();<br>
+    }<br>

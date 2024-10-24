@@ -1,0 +1,99 @@
+4.merge sort
+<br>
+print("\nMerge Sort")<br>
+A=[]<br>
+B=[]<br>
+n=int(input("Enter the number of elements in A: "))<br>
+for i in range(n):<br>
+elt=int(input("Enter the element : "))<br>
+A.append(elt)<br>
+B.append(0)<br>
+print("A=",A)<br>
+n=len (A)<br>
+lower=0<br>
+upper=n-1<br>
+mid=int((lower+upper)/2)<br>
+def mergesorting (lower, upper):<br>
+if upper>lower:<br>
+mid-int((lower+upper)/2)<br>
+mergesorting(lower,mid)<br>
+mergesorting(mid+1, upper)<br>
+mergelists(lower, mid, upper)<br>
+def mergelists(lower,mid, upper):<br>
+print("Lower=", lower, "Upper=", upper)<br>
+lb1=lower<br>
+ub1=mid<br>
+lb2=mid+1<br>
+ub2=upper<br>
+k=lower<br>
+global A<br>
+global B<br>
+while lbl<=ubl and lb2<=ub2:<br>
+if A[lb1]<A[lb2]:<br>
+B[k]=A[lbl]<br>
+lbl=lb1+1<br>
+k=k+1<br>
+else:<br>
+B[k]=A[lb2]<br>
+lb2=lb2+1<br>
+k=k+1<br>
+if lb1>ub1:<br>
+while lb2<=ub2:<br>
+B[k]=A[lb2]<br>
+lb2=lb2+1<br>
+k=k+1<br>
+else:<br>
+while lb1<=ub1:<br>
+B[k]=A[lb1]<br>
+lb1=lb1+1<br>
+k=k+1<br>
+for k in range(lower,upper+1):<br>
+A[k]=B[k]<br>
+print (A)<br>
+mergesorting (0,n-1)<br>
+<br>
+<hr width="100%;" color="blue" size="1">
+            5.linear search
+<br>
+print("\nLinear Search")<br>
+A=[73,18,10,5,21,32,74]<br>
+print("A=",A)<br>
+data=int(input("Enter the element to be searched: "))<br>
+n=len (A)<br>
+flag=0<br>
+for i in range(n):<br>
+if A[1]==data:<br>
+flag=1<br>
+break<br>
+if flag==0:<br>
+print ("The element is not present in the array.")<br>
+else:<br>
+print("The element is present in the array at position ",i)<br>
+<br>
+<hr width="100%;" color="blue" size="1">
+            6.binary search
+<br>
+print("\nBinary Search")<br>
+A=[10,20,25,51,75,100,250,500]<br>
+print("A=",A)<br>
+data=int(input("Enter the element to be searched"))<br>
+n=len (A)<br>
+start=0<br>
+end=n-1<br>
+flag=0<br>
+print("Start\tEnd\tMid")<br>
+while start<=end:<br>
+mid=int((start+end)/2)<br>
+print (start, "\t", end, "\t", mid)<br>
+if data=-A[mid]:<br>
+flag=1<br>
+break<br>
+elif data<A[mid]:<br>
+end=mid-1<br>
+else:<br>
+start=mid+1<br>
+if flag==0:<br>
+print("The element is not present in the array.")<br>
+else:<br>
+print("The element is present in the array at position ",mid)<br>
+</p>

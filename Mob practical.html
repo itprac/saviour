@@ -1,0 +1,485 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+MOB PRACTICAL
+</head>
+<body>
+    <header>
+        <h1>Mob practical</h1>
+    </header>
+    <li><a href="./console code.html">console codes</a></li>
+    <li><a href="./Program to demonstrate the features of Dart language.html">Program to demonstrate the features of Dart language</a></li>
+    <li><a href="./Designing the mobile app to implement different widgets.html">Designing the mobile app to implement different widgets</a></li>
+    <li><a href="./Designing the mobile app to implement the routing.html">Designing the mobile app to implement the routing.</a></li>
+    <li><a href="./Designing the mobile app to implement the animation.html">Designing the mobile app to implement the animation.</a></li>
+    <li><a href="./Designing the mobile app to implement the gesture.html">Designing the mobile app to implement the gesture.</a></li>
+    <li><a href="./Designing the mobile app to implement the theming and styling.html">Designing the mobile app to implement the theming and styling.</a></li>
+    <li><a href="./Designing the mobile app to implement the state management.html">Designing the mobile app to implement the state management.</a></li>
+<p>
+    <hr width="100%;" color="blue" size="1"><br>
+
+<hr width="100%;" color="blue" size="1"><br>
+import 'package:flutter/material.dart';<br>
+void main() {<br>
+  runApp(MyApp());<br>
+}<br>
+class MyApp extends StatefulWidget {<br>
+  @override<br>
+  _MyAppState createState() => _MyAppState();<br>
+}<br>
+class _MyAppState extends State<MyApp> {<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return MaterialApp(<br>
+      home: Scaffold(<br>
+          appBar: AppBar(<br>
+            title: Text('4278'),<br>
+          ),<br>
+          body: Center(child: Column(children: <Widget>[<br>
+            Container(<br>
+              margin: EdgeInsets.all(25),<br>
+              child: TextButton(<br>
+                child: Text('SignUp', style: TextStyle(fontSize: 20.0),),<br>
+                onPressed: () {},<br>
+              ),<br>
+            ),<br>
+            Container(<br>
+              margin: EdgeInsets.all(25),<br>
+              child: TextButton(<br>
+                child: Text('LogIn', style: TextStyle(fontSize: 20.0),),<br>
+                style: TextButton.styleFrom(<br>
+                  foregroundColor: Colors.white,<br>
+                  backgroundColor: Colors.pinkAccent,<br>
+                  padding: const EdgeInsets.all(16.0),),<br>
+                onPressed: () {},<br>
+              ),<br>
+            ),<br>
+          ]<br>
+          ))<br>
+      ),<br>
+    );<br>
+  }<br>
+}<br>
+<br>
+===================================================================================<br>
+<br>
+<br>
+<br>
+import 'package:flutter/material.dart';<br>
+void main() => runApp(MaterialApp(<br>
+  home: MyApp(),<br>
+));<br>
+class MyApp extends StatefulWidget {<br>
+  @override<br>
+  _MyAppState createState() => _MyAppState();<br>
+}<br>
+class _MyAppState extends State<MyApp> {<br>
+  List<ListItem> _dropdownItems = [<br>
+    ListItem(1, "GeeksforGeeks"),<br>
+    ListItem(2, "Javatpoint"),<br>
+    ListItem(3, "tutorialandexample"),<br>
+    ListItem(4, "guru99")<br>
+  ];<br>
+  late List<DropdownMenuItem<ListItem>> _dropdownMenuItems;<br>
+  late ListItem _itemSelected;<br>
+  void initState() {<br>
+    super.initState();<br>
+    _dropdownMenuItems = buildDropDownMenuItems(_dropdownItems);<br>
+    _itemSelected = _dropdownMenuItems[1].value!;<br>
+  }<br>
+  List<DropdownMenuItem<ListItem>> buildDropDownMenuItems(List<br>
+  listItems) {<br>
+    List<DropdownMenuItem<ListItem>> items = [];<br>
+    for (ListItem listItem in listItems) {<br>
+      items.add(<br>
+          DropdownMenuItem(<br>
+          child: Text(listItem.name),<br>
+            value: listItem,<br>
+          ),<br>
+      );<br>
+    }<br>
+    return items;<br>
+  }<br>
+  @override
+  Widget build(BuildContext context) {<br>
+    return Scaffold(<br>
+      appBar: AppBar(<br>
+        title: Text(""),<br>
+      ),<br>
+      body: Column(<br>
+        children: <Widget>[<br>
+          Padding(<br>
+            padding: const EdgeInsets.all(10.0),<br>
+            child: Container(<br>
+              padding: const EdgeInsets.all(5.0),<br>
+              decoration: BoxDecoration(<br>
+                  color: Colors.greenAccent,<br>
+                  border: Border.all()),<br>
+              child: DropdownButtonHideUnderline(<br>
+                child: DropdownButton(<br>
+                    value: _itemSelected,<br>
+                    items: _dropdownMenuItems,<br>
+                    onChanged: (value) {<br>
+                      setState(() {<br>
+                        _itemSelected = value!;<br>
+                      });<br>
+                    }),<br>
+              ),<br>
+            ),<br>
+          ),<br>
+          Text("We have selected ${_itemSelected.name}"),<br>
+        ],<br>
+      ),<br>
+    );<br>
+  }<br>
+}<br>
+class ListItem {<br>
+  int value;<br>
+  String name;<br>
+  ListItem(this.value, this.name);<br>
+}<br>
+<br>
+==============================================================<br>
+<br>
+import 'package:flutter/material.dart';<br>
+void main() => runApp(MyApp());<br>
+class MyApp extends StatelessWidget {<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return MaterialApp(<br>
+      home: Scaffold(<br>
+        appBar: AppBar(<br>
+          title: Text("4278"),<br>
+        ),<br>
+        body: Center(<br>
+          child: MyStatefulWidget(),<br>
+        ),<br>
+      ),<br>
+    );<br>
+  }<br>
+}<br>
+double _speakervolume = 0.0;<br>
+class MyStatefulWidget extends StatefulWidget {<br>
+  MyStatefulWidget({Key ? key}) : super(key: key);<br>
+  @override<br>
+  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();<br>
+}<br>
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {<br>
+  Widget build(BuildContext context) {<br>
+    return Column(<br>
+        mainAxisSize: MainAxisSize.min,<br>
+        children: <Widget>[<br>
+    IconButton(<br>
+    icon: Icon(Icons.volume_up),<br>
+    iconSize: 50,<br>
+    color: Colors.brown,<br>
+    tooltip: 'Increase volume by 5',<br>
+    onPressed: () {<br>
+    setState(() {<br>
+      _speakervolume += 5;<br>
+    });<br>
+    },<br>
+    ),<br>
+          Text('Speaker Volume: $_speakervolume')<br>
+        ],<br>
+    );<br>
+  }<br>
+}<br>
+<br>
+===================================================================<br>
+<hr width="100%;" color="blue" size="1"><br>
+<br>
+import 'package:flutter/material.dart';<br>
+void main() {<br>
+  runApp(MaterialApp(<br>
+    title: '4278',<br>
+    theme: ThemeData(<br>
+      primarySwatch: Colors.green,<br>
+    ),<br>
+    home: FirstRoute(),<br>
+  ));<br>
+}<br>
+class FirstRoute extends StatelessWidget {<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+  return Scaffold(<br>
+  appBar: AppBar(<br>
+  title: Text('First Screen'),<br>
+  ), // AppBar<br>
+  body: Center(<br>
+  child: ElevatedButton(<br>
+  child: Text('Click Here'),<br>
+//color: Colors.orangeAccent,<br>
+  onPressed: () {<br>
+  Navigator.push(<br>
+  context,<br>
+  MaterialPageRoute (builder: (context) => SecondRoute()),<br>
+  );<br>
+  },<br>
+  ),<br>
+  ),<br>
+  );<br>
+  }<br>
+  }<br>
+class SecondRoute extends StatelessWidget {<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+  return Scaffold(<br>
+  appBar: AppBar(<br>
+  title: Text("Second Screen"),<br>
+  ),<br>
+  body: Center(<br>
+  child: ElevatedButton(<br>
+  <br>
+  onPressed: () {<br>
+  Navigator.pop(context);<br>
+  },<br>
+  child: Text('Go back'),<br>
+  ), // ElevatedButton<br>
+  ), // Center<br>
+  ); // Scaffold<br>
+  }<br>
+  }<br>
+  <br>
+=========================================================================<br>
+<hr width="100%;" color="blue" size="1"><br>
+<br>
+import 'package:flutter/animation.dart';<br>
+import 'package:flutter/material.dart';<br>
+void main() => runApp(MyApp());<br>
+class MyApp extends StatelessWidget {<br>
+// This widget is the root of your application.<br>
+@override<br>
+Widget build(BuildContext context) {<br>
+return MaterialApp(<br>
+title: 'Flutter Animation',<br>
+theme: ThemeData(<br>
+// This is the theme of your application.<br>
+primarySwatch: Colors.blue,<br>
+),<br>
+home: MyHomePage(),<br>
+);<br>
+}<br>
+}<br>
+class MyHomePage extends StatefulWidget {<br>
+_HomePageState createState() => _HomePageState();<br>
+}<br>
+class _HomePageState extends State<MyHomePage> with<br>
+SingleTickerProviderStateMixin {<br>
+late Animation<double> animation;<br>
+late AnimationController animationController;<br>
+@override<br>
+void initState() {<br>
+super.initState();<br>
+animationController = AnimationController(vsync: this, duration:<br>
+Duration(milliseconds: 2500));<br>
+animation = Tween<double>(begin: 0.0, end:<br>
+1.0).animate(animationController);<br>
+animation.addListener((){<br>
+setState((){<br>
+print (animation.value.toString());<br>
+});<br>
+});<br>
+animation.addStatusListener((status){<br>
+if(status == AnimationStatus.completed){<br>
+animationController.reverse();<br>
+} else if(status == AnimationStatus.dismissed) {<br>
+animationController.forward();<br>
+}<br>
+});<br>
+animationController.forward();<br>
+}<br>
+@override<br>
+Widget build(BuildContext context) {<br>
+return Center(<br>
+child: AnimatedLogo(<br>
+animation: animation,<br>
+)<br>
+);<br>
+}<br>
+}<br>
+class AnimatedLogo extends AnimatedWidget {<br>
+final Tween<double> _sizeAnimation = Tween<double> (begin: 0.0,<br>
+end:<br>
+500.0);<br>
+AnimatedLogo({Key ? key, required Animation animation}):super(key:<br>
+key,<br>
+listenable : animation);<br>
+<br>
+@override<br>
+Widget build(BuildContext context) {<br>
+final Animation<double> animation = listenable as<br>
+Animation<double>;<br>
+return Transform.scale(<br>
+scale: _sizeAnimation.evaluate(animation),<br>
+child: FlutterLogo(),<br>
+);<br>
+}<br>
+}<br>
+=========================================================================<br>
+<hr width="100%;" color="blue" size="1"><br>
+import 'package:flutter/material.dart';<br>
+void main() {<br>
+  runApp(GestorDetectorApp());<br>
+}<br>
+class GestorDetectorApp extends StatefulWidget {<br>
+  const GestorDetectorApp({Key? key}): super(key: key);<br>
+  @override<br>
+ _GestorDetectorAppState createState() => _GestorDetectorAppState();<br>
+}<br>
+class _GestorDetectorAppState extends State {<br>
+   late Color? color = Colors.blue [900];<br>
+   @override<br>
+   Widget build(BuildContext context) {<br>
+    return MaterialApp(<br>
+      home: Scaffold(<br>
+        appBar: AppBar(<br>
+         title: Text("Gesture Detector App"),<br>
+      ), // AppBar<br>
+      body: Center(<br>
+       child: GestureDetector(<br>
+         onTap: () {<br>
+           print("Continer is clicked");<br>
+           setState(() {<br>
+             color = Colors.red[600];<br>
+           });<br>
+         },<br>
+         child: Container(<br>
+           height: 100,<br>
+           width: 100,<br>
+           color: color,<br>
+           alignment: Alignment.center,<br>
+           child: Text("Click Me!",<br>
+              style: TextStyle(color: Colors.white, fontSize: 20)),<br>
+           ),<br>
+         ),<br>
+       ),<br>
+     ),<br>
+   );<br>
+ }<br>
+}<br>
+=========================================================================<br>
+<hr width="100%;" color="blue" size="1"><br>
+import 'package:flutter/foundation.dart';<br>
+import 'package:flutter/material.dart';<br>
+void main() {<br>
+  runApp(MyApp());<br>
+}<br>
+class MyApp extends StatelessWidget {<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    final appName = 'Theame And Styling';<br>
+    return MaterialApp(<br>
+    title: appName,<br>
+    theme: ThemeData(<br>
+    brightness: Brightness.light,<br>
+    primaryColor: Colors.blue,<br>
+    hintColor: Colors.deepOrangeAccent,<br>
+    fontFamily: 'Georgia',<br>
+        textTheme: TextTheme(<br>
+        headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),<br>
+        headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),<br>
+         bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind&'),<br>
+    ),<br>
+),<br>
+    home: MyHomePage(<br>
+    title: appName,<br>
+    ),<br>
+    );<br>
+}<br>
+}<br>
+class MyHomePage extends StatelessWidget {<br>
+  final String title;<br>
+  const MyHomePage({Key? key, required this.title}): super(key: key);<br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return Scaffold(<br>
+        appBar: AppBar(<br>
+          title: Text(title),<br>
+        ), // AppBar<br>
+        body: Center(<br>
+         child: Container(<br>
+          color: Theme.of(context).hintColor,<br>
+          child: Text(<br>
+          'Hello Class',<br>
+           style: Theme.of(context).textTheme.headline6,<br>
+          ), <br>
+        ), <br>
+    ),<br>
+    );<br>
+  }<br>
+}<br>
+<br>
+=========================================================================<br>
+<hr width="100%;" color="blue" size="1"><br>
+import 'package:flutter/material.dart';<br>
+<br>
+void main() => runApp(MyApp());<br>
+<br>
+class MyApp extends StatelessWidget {<br>
+  const MyApp({Key? key}) : super(key: key);<br>
+  <br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return MaterialApp(<br>
+      title: 'Stateful Widget',<br>
+      theme: ThemeData(<br>
+        primarySwatch: Colors.blue,<br>
+      ),<br>
+      home: CounterWidget(),<br>
+    );<br>
+  }<br>
+}<br>
+<br>
+class CounterWidget extends StatefulWidget {<br>
+  @override<br>
+  _CounterWidgetState createState() => _CounterWidgetState();<br>
+}<br>
+<br>
+class _CounterWidgetState extends State<CounterWidget> {<br>
+  int _counter = 0;<br>
+  <br>
+  @override<br>
+  Widget build(BuildContext context) {<br>
+    return Scaffold(<br>
+      appBar: AppBar(<br>
+        title: const Text('Stateful Widget'),<br>
+      ),<br>
+      body: Column(<br>
+        mainAxisAlignment: MainAxisAlignment.center,<br>
+        children: [<br>
+          Center(<br>
+            child: Container(<br>
+              color: Colors.blue,<br>
+              child: Text(<br>
+                '$_counter',<br>
+                style: TextStyle(fontSize: 50.0),<br>
+              ),<br>
+            ),<br>
+          ),<br>
+          Slider(<br>
+            min: 0,<br>
+            max: 100,<br>
+            value: _counter.toDouble(),<br>
+            onChanged: (double value) {<br>
+              setState(() {<br>
+                _counter = value.toInt();<br>
+              });<br>
+            },<br>
+            activeColor: Colors.blue,<br>
+            inactiveColor: Colors.red,<br>
+          ),<br>
+        ],<br>
+      ),<br>
+    );<br>
+  }<br>
+}<br>
+<br>
+=========================================================================<br>
+<hr width="100%;" color="blue" size="1"><br>
+<br>
+</p>
+</body>
+</html>

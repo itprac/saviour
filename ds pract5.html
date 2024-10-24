@@ -1,0 +1,45 @@
+binary tree<br>
+============================================================<br>
+print("binary tree")<br>
+h=int(input("height of the tree:"))<br>
+n=(2**(h+1))-1<br>
+print("no of nodes=",n)<br>
+t=[]<br>
+print("enter the array:")   <br>
+for i in range(n):<br>
+    print(i,"."end=" ")<br>
+    x=input()<br>
+    t.append(x)<br>
+print("parent\tleft\tright")<br>
+for i in range(n//2):<br>
+    print(i,".",end="")<br>
+    print(t[i],"\t",t[(2*i)+1],"\t",t[(2*i)+2])<br>
+    print()<br>
+=============================================================<br>
+binary search tree<br>
+==============================================================<br>
+print("binary search tree")<br>
+n=int(input("no of elements:"))<br>
+h=n-1<br>
+t=[]<br>
+arr=(2**(h+1))n-1<br>
+for i in range(arr):<br>
+    t.append(0)<br>
+print("enter the element:")<br>
+for i in range(n)<br>
+    print(i+1,end="")<br>
+    x=int(input())<br>
+    if i==0:<br>
+        t[i]=x<br>
+    else:<br>
+        root=0<br>
+        while t[root]!=0:<br>
+            if x<t[root]:<br>
+                root=(2*root)+1<br>
+            elif x>=t[root]:<br>
+                root=(2*root)+2<br>
+        t[root]=x<br>
+print("parent\tleft\tright")<br>
+for i in range(arr//2):<br>
+if t[i]>0:<br>
+    print(t[i],"\t",t[(2*i)+1],"\t",t[(2*i)+2])<br>

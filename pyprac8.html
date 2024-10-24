@@ -1,0 +1,32 @@
+import math<br>
+<br>
+def circleArea(r):<br>
+    return math.pi * r * r<br>
+    <br>
+def squareArea(a):<br>
+    return a ** 2<br>
+    <br>
+def pointyShapeVolume(x, y, squareBase):<br>
+    if squareBase:<br>
+        base = squareArea(x) * (y / 3)<br>
+        return base<br>
+    else:<br>
+        base = circleArea(x) * y / 3 <br>
+        return base<br>
+        <br>
+print(pointyShapeVolume(2, 3, True))<br>
+<br>
+==================================================<br>
+<br>
+import sys<br>
+r = ['a', 0, 2]<br>
+for entry in r:<br>
+    try:<br>
+       print ("The entry is", entry)<br>
+       r1= 1/int (entry)<br>
+       break<br>
+    except:<br>
+      print ("Oops!", sys.exc_info() [0], "occured.")<br>
+      print ("Next entry.")<br>
+      print ()<br>
+      print ("The reciprocal of", entry, "is", r)<br>

@@ -1,0 +1,21 @@
+def file_read(fname):<br>
+    txt = open(fname)<br>
+    print(txt.read())<br>
+file_read('D:/mob/mob1.txt')    ## file_read('example')<br>
+<br>
+==============================================================<br>
+<br>
+def file_read(fanme):<br>
+    with open(fanme,"w") as myfile:<br>
+        myfile.write("hello......\n")<br>
+        myfile.write('good morning')<br>
+    txt = open (fanme)<br>
+    print(txt.read())<br>
+file_read('D:/practical/new.txt')   <br> 
+<br>
+=====================================<br>
+<br>
+f=open("D:/practical/new.txt","r") <br>
+t=f.readlines ()<br>
+print (t [-1]) <br>
+f.close<br>

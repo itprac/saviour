@@ -1,0 +1,149 @@
+CLASS AND OBJECT<br>
+==========================<br>
+class student {<br>
+  var stdName;<br>
+  var stdAge;<br>
+  var stdRollnum;<br>
+  showStdInfo() {<br>
+    print("Student name is : ${stdName}");<br>
+    print("Student name is : ${stdAge}");<br>
+    print("Student name is : ${stdRollnum}");<br>
+  }<br>
+}<br>
+void main() {<br>
+  var std= new student();<br>
+  std.stdName = "meet";<br>
+  std.stdAge = 19;<br>
+  std.stdRollnum=4021;<br>
+  std.showStdInfo();<br>
+}<br>
+============================================<br>
+PRINT FUNCTION AND USED FOR LOOP TO PRINT IT<br>
+============================================<br>
+void main(){<br>
+  print("my college name is ruparel");<br>
+}<br>
+============================<br>
+WHILE LOOP SAME FOR LOOP<br>
+============================<br>+-
+void main()<br>
+{<br>
+  var i = 1;<br>
+  while(i<10);<br>
+  {<br>
+    print("meet");<br>
+    i++;<br>
+  }<br>
+}<br>
+====================================<br>
+DO WHILE LOOP<br>
+=====================================<br>
+void main()<br>
+{<br>
+  var total = 0;<br>
+  var a = 1;<br>
+  var b = 100;<br>
+  do{<br>
+    total = total+1;<br>
+    a++;<br>
+  }<br>
+  while(a<=b);<br>
+  <br>
+  print("the value : ${total}");<br>
+}<br>
+===================================================<br>
+PRINT VARIABLE USING IF STATEMENT AND ELSE STATMENT<br>
+===================================================<br>
+void main()<br>
+{<br>
+  var i = 3,j=5,k=7;<br>
+  if((i>j)&&(i>k))<br>
+   {<br>
+     print("i is greater than all");<br>
+     <br>
+   }<br>
+   if((j>i)&&(j>k))<br>
+  {<br>
+    print("j is greater than all");<br>
+    <br>
+  }<br>
+  else<br>
+    {<br>
+      print("k is greater than all");<br>
+    }<br>
+}<br>
+<br>
+============================================<br>
+ODD AND EVEN NUMBER<br>
+======================<br>
+void main()<br>
+{<br>
+  var a = 5;<br>
+  if(a%2==0)<br>
+    {<br>
+      print("even");<br>
+    }<br>
+  else<br>
+    {<br>
+      print("odd");<br>
+    }<br>
+}<br>
+<br>
+=======================<br>
+ARITHAMATIC OPERATION<br>
+=======================<br>
+void main()<br>
+{<br>
+  var a = 15;<br>
+  var b = 5;<br>
+  print("addition : ${a+b}");<br>
+  print("substraction : ${a-b}");<br>
+  print("multipication : ${a*b}");<br>
+  print("division : ${a/b}");<br>
+  print("reminder : ${a%b}");<br>
+}<br>
+===================================<br>
+FACTORIAL <br>
+=================================<br>
+void main() {<br>
+  var n = 5;<br>
+  var result = factorial(n);<br>
+  print("Factorial of 5 is $result");<br>
+}<br>
+<br>
+int factorial(int n) {<br>
+  if (n == 0) {<br>
+    return 1;<br>
+  } else {<br>
+    return n * factorial(n - 1);<br>
+  }<br>
+}<br>
+======================================<br>
+PRIME NUMBER<br>
+=======================<br>
+void main() {<br>
+  var a = 5;<br>
+  if (isPrime(a)) {<br>
+    print("$a is prime");<br>
+  } else {<br>
+    print("$a is not prime");<br>
+  }<br>
+}<br>
+<br>
+bool isPrime(int n) {<br>
+  if (n <= 1) {<br>
+    return false;<br>
+  }<br>
+  for (int i = 2; i <= n / 2; i++) {<br>
+    if (n % i == 0) {<br>
+      return false;<br>
+    }<br>
+  }<br>
+  return true;<br>
+}<br>
+
+
+
+
+
+

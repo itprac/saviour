@@ -1,0 +1,65 @@
+class Student:<br>
+  def info (self, name, sex, course, result):<br>
+     self.name=name<br>
+     self.sex=sex<br>
+     self.course=course<br>
+     self.result=result<br>
+  def display1 (self, name, sex, course, result): <br>
+     self.name=name<br>
+     self.sex=sex<br>
+     self.course=course<br>
+     self.result=result<br>
+     print ("Name:", name) <br>
+     print ('Sex:', sex) <br>
+     print('course:', course)<br>
+     print('result:', result)<br>
+s1 = Student ()<br>
+s1.display1 ('Ashwin', 'M', 'IT', '96')<br>
+<br>
+===============================================<br>
+<br>
+class Shape:<br>
+    author = 'Ashwin Mehta'<br>
+    <br>
+    def __init__(self, x, y):<br>
+        self.x = x<br>
+        self.y = y<br>
+        <br>
+    def area(self):<br>
+        a = self.x * self.y<br>
+        print('Area of a rectangle:', a)<br>
+        print(self.author)<br>
+        <br>
+class Square(Shape):<br>
+    def __init__(self, x):<br>
+        super().__init__(x, x)<br>
+        <br>
+    def area(self):<br>
+        a = self.x * self.x<br>
+        print('Area of a square:', a)<br>
+        print(self.author)<br>
+        <br>
+r = Shape(12, 34)<br>
+r.area()<br>
+<br>
+s = Square(34)<br>
+s.area()<br>
+<br>
+===============================================================<br>
+<br>
+class Numbers (object):<br>
+  def __init__ (self, x,y):<br>
+    self.x=x<br>
+    self.y=y<br>
+  def add (self, x, y): <br>
+    self.x=x<br>
+    self.y=y<br>
+    return self.x+self.y <br>
+  def multiply (self, x): <br>
+    MULTIPLIER=7.4<br>
+    self.x=x<br>
+    return self.x*MULTIPLIER<br>
+n3 = Numbers(0,0)<br>
+result = n3.multiply(4.78)<br>
+print(result)  <br>
+<br>
